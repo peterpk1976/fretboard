@@ -44,8 +44,7 @@ const playNote = (note) => {
       <div class="col pointer" @click="playNote('./src/assets/notes/note' + getNote(stringIndex, position - 1) + '.wav')"
         :class="[getNote(stringIndex, position - 1).toLowerCase().replace('#', 'sharp'), { 'hoo': inColor }]"
         v-for="position in positions" :key="position">
-        {{ getNote(stringIndex, position - 1) }}
-        <div class="string"></div>
+        <div class="note">{{ getNote(stringIndex, position - 1) }}</div>
       </div>
     </div>
     <div class="row mt-5">
@@ -59,6 +58,7 @@ const playNote = (note) => {
 
 <style lang="scss" scoped>
 #fretboard {
+  border-top: 0.5px solid gray;
 
   .col {
     min-height: 50px;
@@ -66,7 +66,23 @@ const playNote = (note) => {
     padding-left: 0;
     padding-right: 0;
     text-align: center;
-    border-left: 3px solid orange;
+    border-left: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 0.5px solid gray;
+
+    .note {
+      color: black;
+      font-size: 14px;
+      font-weight: 700;
+      background-color: white;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+      border: 0.5px solid gray;
+    }
 
     .string {
       width: 100%;
