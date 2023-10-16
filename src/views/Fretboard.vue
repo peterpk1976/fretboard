@@ -19,8 +19,8 @@ const getNote = (string, position) => {
 
 const playNote = (note) => {
   if (note) {
-    let audio = new Audio(note);
-    audio.play();
+    let audio = new Audio(note)
+    audio.play()
   }
 }
 </script>
